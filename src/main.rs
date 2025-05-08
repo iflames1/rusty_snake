@@ -9,7 +9,7 @@ use piston_window::*;
 use piston_window::types::Color;
 
 use game::Game;
-use draw::to_coord_u32;
+use draw::to_coord;
 
 const BACK_COLOR: Color = [0.50, 0.50, 0.50, 1.00];
 
@@ -18,7 +18,10 @@ fn main() {
 
     let mut window: PistonWindow = WindowSettings::new(
         "Rusty Snake",
-        [to_coord_u32(width), to_coord_u32(height)],
+        [
+            to_coord(width),
+            to_coord(height)
+        ],
     ).exit_on_esc(true)
         .build()
         .unwrap();
